@@ -2,4 +2,5 @@
 // Você pode escrever seu código neste editor
 
 
-controla_player();
+	liga_lanterna()
+	

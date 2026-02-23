@@ -21,6 +21,7 @@ controla_player = function(){
 	}
 	
 	
+	
 	//Direção do movimento, mas a velocidade diagonal fica maior
 	//var _velocidadeH = (_direita - _esquerda) * velocidade;
 	//x += _velocidadeH;
@@ -45,9 +46,11 @@ controla_player = function(){
 	x = x + _movimento_horizontal * velocidade;
 	y = y + _movimento_vertical * velocidade;
 	
-	show_debug_message(velocidade)
+	image_angle = point_direction(0, 0, _movimento_horizontal, _movimento_vertical);
 	
-	liga_lanterna()
+}
+	
+
 	
 //	if (_velocidadeH != 0 || _velocidadeV != 0) {
 
@@ -92,4 +95,3 @@ controla_player = function(){
 
 	
 	
-}

@@ -1,4 +1,6 @@
-global.lanterna = false;
 
-global.radio = false; 
 
+global.estadoObjeto = {
+    lanterna : false,
+    radio : false
+};
