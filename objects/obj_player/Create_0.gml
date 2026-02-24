@@ -93,5 +93,7 @@ controla_player = function(){
 
 //}
 
+
+
 	
 	
