@@ -4,6 +4,8 @@
 
 controla_player();
 
+
+#region Inventário Lanterna
 if (keyboard_check_pressed(ord("2"))) {
 	
 	if (instance_exists(obj_radio)){
@@ -28,9 +30,11 @@ if(global.itemEquipado.lanterna && keyboard_check_pressed(ord("F"))){
 			
 }
 
+#endregion
 
 //--------------------------------------------------------------------------------------------
 
+#region Inventário Rádio 
 
 if (keyboard_check_pressed(ord("1"))) {
 	
@@ -56,5 +60,19 @@ if(global.itemEquipado.radio && keyboard_check_pressed(ord("R"))){
 			
 }
 
+#endregion
 
-show_debug_message(global.estadoObjeto.radio);
+
+#region Atravessa Porta
+	
+	
+	//Poderia ter feito com função, mas como só vou fazer pra um objeto, to fazendo assim mesmo kkkkkk 
+	//E também to sem tempo pra entregar esse projeto
+	if (global.estadoObjeto.lanterna && obj_colisaoT.fantasma){
+		inst_59583BF6.solid = false;
+	} else {
+		inst_59583BF6.solid = true;
+	}
+	
+	
+#endregion

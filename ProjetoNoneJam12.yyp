@@ -41,6 +41,7 @@
   },
   "name":"ProjetoNoneJam12",
   "resources":[
+    {"id":{"name":"obj_carta","path":"objects/obj_carta/obj_carta.yy",},},
     {"id":{"name":"obj_colisaoT","path":"objects/obj_colisaoT/obj_colisaoT.yy",},},
     {"id":{"name":"obj_lanterna","path":"objects/obj_lanterna/obj_lanterna.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
@@ -49,6 +50,7 @@
     {"id":{"name":"scr_Funcoes","path":"scripts/scr_Funcoes/scr_Funcoes.yy",},},
     {"id":{"name":"scr_VariaveisGlobais","path":"scripts/scr_VariaveisGlobais/scr_VariaveisGlobais.yy",},},
     {"id":{"name":"snd_radio_interferencia","path":"sounds/snd_radio_interferencia/snd_radio_interferencia.yy",},},
+    {"id":{"name":"spr_carta","path":"sprites/spr_carta/spr_carta.yy",},},
     {"id":{"name":"spr_colisaoT","path":"sprites/spr_colisaoT/spr_colisaoT.yy",},},
     {"id":{"name":"spr_lanterna","path":"sprites/spr_lanterna/spr_lanterna.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
