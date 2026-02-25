@@ -48,6 +48,7 @@
     {"id":{"name":"rm_Jogo","path":"rooms/rm_Jogo/rm_Jogo.yy",},},
     {"id":{"name":"scr_Funcoes","path":"scripts/scr_Funcoes/scr_Funcoes.yy",},},
     {"id":{"name":"scr_VariaveisGlobais","path":"scripts/scr_VariaveisGlobais/scr_VariaveisGlobais.yy",},},
+    {"id":{"name":"snd_radio_interferencia","path":"sounds/snd_radio_interferencia/snd_radio_interferencia.yy",},},
     {"id":{"name":"spr_colisaoT","path":"sprites/spr_colisaoT/spr_colisaoT.yy",},},
     {"id":{"name":"spr_lanterna","path":"sprites/spr_lanterna/spr_lanterna.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
