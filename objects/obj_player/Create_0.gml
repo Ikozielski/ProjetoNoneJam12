@@ -46,7 +46,12 @@ controla_player = function(){
 	x = x + _movimento_horizontal * velocidade;
 	y = y + _movimento_vertical * velocidade;
 	
-	image_angle = point_direction(0, 0, _movimento_horizontal, _movimento_vertical);
+	//Faz o personagem parar olhando pra ultima direção que ele andou 
+	if (_movimento_horizontal != 0 || _movimento_vertical != 0){
+	  image_angle = point_direction(x, y, x + _movimento_horizontal, y + _movimento_vertical);
+	}
+	
+	//image_angle = point_direction(0, 0, _movimento_horizontal, _movimento_vertical);
 	
 }
 	
