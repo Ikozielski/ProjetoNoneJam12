@@ -5,6 +5,11 @@
 
 velocidade = 5;
 
+direcao = "baixo";
+
+angulo_mira = 0;
+
+
 controla_player = function(){
 	
 	var _cima, _baixo, _esquerda, _direita, _interagir;
@@ -23,71 +28,81 @@ controla_player = function(){
 	
 	
 	//Direção do movimento, mas a velocidade diagonal fica maior
-	//var _velocidadeH = (_direita - _esquerda) * velocidade;
-	//x += _velocidadeH;
+	var _velocidadeH = (_direita - _esquerda) * velocidade;
+	x += _velocidadeH;
 		
-	//var _velocidadeV = (_baixo - _cima) * velocidade;
-	//y += _velocidadeV;
+	var _velocidadeV = (_baixo - _cima) * velocidade;
+	y += _velocidadeV;
 	
 	// Calcula direção do movimento
-	var _movimento_horizontal = (_direita - _esquerda);
-	var _movimento_vertical = (_baixo - _cima);
+	//var _movimento_horizontal = (_direita - _esquerda);
+	//var _movimento_vertical = (_baixo - _cima);
 
 	// Calcula o tamanho do vetor
-	var _comprimento = point_distance(0, 0, _movimento_horizontal, _movimento_vertical);
+	//var _comprimento = point_distance(0, 0, _movimento_horizontal, _movimento_vertical);
 
 	// Normaliza para evitar velocidade maior na diagonal
-	if (_comprimento > 0) {
-	    _movimento_horizontal = _movimento_horizontal / _comprimento;
-	    _movimento_vertical = _movimento_vertical / _comprimento;
-	}
+	//if (_comprimento > 0) {
+	//    _movimento_horizontal = _movimento_horizontal / _comprimento;
+	//    _movimento_vertical = _movimento_vertical / _comprimento;
+	//}
 
 	// Aplica movimento
-	x = x + _movimento_horizontal * velocidade;
-	y = y + _movimento_vertical * velocidade;
+	//x = x + _movimento_horizontal * velocidade;
+	//y = y + _movimento_vertical * velocidade;
 	
 	//Faz o personagem parar olhando pra ultima direção que ele andou 
-	if (_movimento_horizontal != 0 || _movimento_vertical != 0){
-	  image_angle = point_direction(x, y, x + _movimento_horizontal, y + _movimento_vertical);
+	if (_velocidadeH != 0 || _velocidadeV != 0){
+	  angulo_mira = point_direction(x, y, x + _velocidadeH, y + _velocidadeV);
 	}
 	
 	//image_angle = point_direction(0, 0, _movimento_horizontal, _movimento_vertical);
 	
+	
+	var _escala = 3;
+
+
+
+// Movimento
+if (_velocidadeH > 0) {
+    sprite_index = spr_player_correndo_direita;
+    direcao = "direita";
 }
-	
+else if (_velocidadeH < 0) {
+    sprite_index = spr_player_correndo_esquerda;
+    direcao = "esquerda";
+}
+else if (_velocidadeV > 0) {
+    sprite_index = spr_player_correndo;
+    direcao = "baixo";
+}
+else if (_velocidadeV < 0) {
+    sprite_index = spr_player_correndo_cima;
+    direcao = "cima";
+}
+else {
+    // Idle baseado na última direção
+    switch (direcao) {
+        case "direita":
+            sprite_index = spr_player_parado_direita;
+        break;
 
-	
-//	if (_velocidadeH != 0 || _velocidadeV != 0) {
+        case "esquerda":
+            sprite_index = spr_player_parado_esquerda;
+        break;
 
-//    // Diagonais
-//    if (_velocidadeH > 0 && _velocidadeV < 0) {
-//        sprite_index = spr_player_cima_direita;
-//    }
-//    else if (_velocidadeH < 0 && _velocidadeV < 0) {
-//        sprite_index = spr_player_cima_esquerda;
-//    }
-//    else if (_velocidadeH > 0 && _velocidadeV > 0) {
-//        sprite_index = spr_player_baixo_direita;
-//    }
-//    else if (_velocidadeH < 0 && _velocidadeV > 0) {
-//        sprite_index = spr_player_baixo_esquerda;
-//    }
+        case "cima":
+            sprite_index = spr_player_parado_cima;
+        break;
 
-//    // Horizontais
-//    else if (_velocidadeH > 0) {
-//        sprite_index = spr_player_direita;
-//    }
-//    else if (_velocidadeH < 0) {
-//        sprite_index = spr_player_esquerda;
-//    }
+        default:
+            sprite_index = spr_player_parado;
+        break;
+    }
+}
 
-//    // Verticais
-//    else if (_velocidadeV > 0) {
-//        sprite_index = spr_player_baixo;
-//    }
-//    else if (_velocidadeV < 0) {
-//        sprite_index = spr_player_cima;
-//    }
+image_xscale = _escala;
+image_yscale = _escala;
 
 //    image_speed = 1;
 
@@ -97,6 +112,8 @@ controla_player = function(){
 //    image_index = 0;
 
 //}
+
+}
 
 
 

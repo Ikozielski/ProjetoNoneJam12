@@ -21,7 +21,7 @@ function revelar_com_lanterna()
 {
   
    if(global.estadoObjeto.lanterna){
-		var _angulo_player = obj_player.image_angle;
+		var _angulo_player = obj_player.angulo_mira;
 		var _angulo_objeto = point_direction(obj_player.x, obj_player.y, x, y);
 		var _diferencia_angulo = angle_difference(_angulo_player, _angulo_objeto);
 		var _abertura_lanterna = 60; 
@@ -48,7 +48,7 @@ function revelar_com_lanterna()
 
 function seguePlayer(){
 	x = obj_player.x;
-	y = obj_player.y;
-	image_angle = obj_player.image_angle;
+	y = obj_player.y + 10;
+	image_angle = obj_player.angulo_mira;
 	
 }
