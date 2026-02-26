@@ -8,7 +8,7 @@ if (global.estadoObjeto.lanterna){
 	
 	//draw_set_colour(c_yellow);
     //draw_circle(x + 300, y, 120, false);
-		var _angulo = image_angle;
+		var _angulo = angulo_mira;
 	    var _alcance = 300;
 	    var _abertura = 30; // quanto abre o cone
 
